@@ -185,8 +185,7 @@ Start AS4QGIS
 3 | Click "Run."
 4 | AS4QGIS will generate four virtual layers. Review your datasets and save them, or add them to your overall project using "copy and paste."
 
-Note for step 3: Specifying shapefile storage locations during this step currently results in incorrect "minH" and "maxH" output. Instead, work with virtual layers and save your data after you've curated it.
-Also note: All point measurements with IDs that do not begin with four digits, as specified by the ArchSurv code, will be filtered out by the algorithm and excluded from the output data.
+Note: All point measurements with IDs that do not begin with four digits, as specified by the ArchSurv code, will be filtered out by the algorithm and excluded from the output data.
 
 ----------------------------------------------------------------------
 
