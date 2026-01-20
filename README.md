@@ -1,21 +1,23 @@
 ArchSurv4QGIS (AS4QGIS) is an open source solution for automated archaeological feature drawings from in-field GNSS / totalstation point measurements via QGIS.
 
-It is designed as an adjustable ".model3" algorithm pipeline.
+It is a suite containing two algorithms: Synthesis and Psyche
+
+They are designed as adjustable ".model3" algorithm pipelines.
 
 ------------------------------------------------------------------
 
-What is ArchSurv4QGIS?
+What is ArchSurv4QGIS Synthesis?
 
-AS4QGIS works on the basis of point data exported as delimited text from a surveying device. 
+AS4QGIS Synthesis works on the basis of point data exported as delimited text from a surveying device. 
 
-ArchSurv4QGIS processes 10-character pointID-strings: e. g. '0001A03001'
+ArchSurv4QGIS Synthesis processes 10-character pointID-strings: e. g. '0001A03001'
 - feature '1'
 - line container / point property 'A'
 - shape type '03'
 - sequence number '001'
 
 
-Depending on the entered "shape type", AS4QGIS generates four output datasets:
+Depending on the entered "shape type", AS4QGIS Synthesis generates four output datasets:
 - polygons.shp
 - polylines.shp
 - pointdata.shp
@@ -32,34 +34,15 @@ trench | '91' - fixed point, '92' - trench polyline, '93' trench polygon
 section nails | '00' - section nail point
 
 
-Three distinct variations of the same algorithm pipeline are available:
-
-1 | Archimedes
-
-2 | Chronos
-
-3 | Chimaira
+What is ArchSurv4QGIS Psyche?
+Psyche processes line and polygon features. It complements the AS4QGIS Synthesis algorithm by adding the same attribute structure to existing line or polygon measurements that Synthesis generates from point data. This enables seamless merging of survey datasets from different data sources to be combined and analyzed together.
 
 
 AS4QGIS is free to use and fully customizable.
 
 ----------------------------------------------------------------------
 
-
-Versions
-
-Currently, three variations of the same algorithmic pipeline are available:
-
-
-1 | Archimedes – This is the simplest, fastest, and most basic form of the pipeline. It is recommended for use in open-area excavations without complex stratigraphy.
-
-
-2 | Chronos – Developed as an extension of Archimedes, Chronos is best suited for urban archaeology. It generates pseudodates in the "YYYY/MM/DD" format based on the minimum and maximum elevation of a feature. These dates allow users to filter features by excavation depth using the "QGIS Temporal Controller" slider.
-
-
-3 | Chimaira – Built upon Chronos, Chimaira introduces an enhanced data management approach. While Archimedes and Chronos separate open (1) and closed (2) line measurements into the output layers "polylines.shp" (1) and "polygons.shp" (2), Chimaira also duplicates all closed line measurements into the "polylines.shp" layer. This creates a comprehensive master file of all line measurements.
-
-----------------------------------------------------------------------
+AS4QGIS Synthesis Workflow
 
 In-field
 
@@ -144,9 +127,11 @@ In-office
 
 Type of Input Data
 
-ArchSurv4QGIS processes delimited Text imported into QGIS as point data with X, Y, and Z values ​​using the "Delimited Text" import function. The file format and the delimiter type of the exported file from the surveying device are insignificant. The exported file should simply be in a format generally readable by QGIS (e.g., .csv, .txt, .asc, etc.) and contain five values ​​structured as follows:
+ArchSurv4QGIS Synthesis processes delimited Text imported into QGIS as point data with X, Y, and Z values ​​using the "Delimited Text" import function. The file format and the delimiter type of the exported file from the surveying device are insignificant. The exported file should simply be in a format generally readable by QGIS (e.g., .csv, .txt, .asc, etc.) and contain a "point_ID" attribute and a "code" attribute:
 
-"Point number/ID"; "x/easting"; "y/northing"; "z/elevation"; "Label"
+- "point_ID" contains the "ArchSurv-String"
+
+- "code" contains additional feature-information
 
 ----------------------------------------------------------------------
 
@@ -157,33 +142,22 @@ First, the desired text file should be imported into QGIS. Follow these steps:
 
 2 | Under File Format, select "Custom delimiters". Here you can set the "Delimiter" used in the text file. If the correct delimiter has been selected, the data should already be displayed as a table under "Sample Data."
 
-3 |Further settings can be made under "Record and Field Options." Mandatory: The "First record has field names" checkbox must not (!!!) be selected. If this box is not selected, the column names under "Sample Data" will be assigned the values ​​'field_1'; 'field_2'; 'field_3'; 'field_4'; 'field_5', in accordance with the algorithm. If the "Detect field types" checkbox is selected, the column types will be automatically assigned correctly. The following applies:
-
-'field_1': Column type "Text (string)" must contain the 'Point number/ID' values.
-'field_2': Column type "Decimal (Double)" must contain the 'x/easting' values;
-'field_3': Column type "Decimal (Double)" must contain the 'y/northing' values;
-'field_4': Column type "Decimal (Double)" must contain the 'z/elevation' values;
-'field_5': Column type "Text (string)" must contain the 'Label/Code' values.
-The algorithm pipeline only works under these conditions. (!!!)
-Tip 1: Header rows or unnecessary measurements can be skipped using the "Number of header lines to discard" option.
-Tip 2: You may need to click the "Discard empty fields" checkbox to skip duplicate separators and maintain the table structure 'field_1'; 'field_2'; 'field_3'; 'field_4'; 'field_5'.
-
-4 | Under "Geometry Definition," select the "Point Coordinates" option. Here, select the x, y, and z coordinates from the table. The following applies:
-X field: 'field_2'
-Y field: 'field_3'
-Z field: 'field_4'
+3 | Under "Geometry Definition," select the "Point Coordinates" option. Here, select the x, y, and z coordinates from the table. The following applies:
+X field: 'easting'
+Y field: 'northing'
+Z field: 'elevation'
 Under "Geometry CRS", select the coordinate reference system used to record the point coordinates.
 
-5 | Click "Add". Your text file should now be imported with point coordinates.
+4 | Click "Add". Your text file should now be imported with point coordinates.
 
 ----------------------------------------------------------------------
 
-Start AS4QGIS 
+Start AS4QGIS Synthesis
 
-1 | Start AS4QGIS by double-clicking.
+1 | Start AS4QGIS Synthesis by double-clicking.
 2 | Select the text file you want to edit.
 3 | Click "Run."
-4 | AS4QGIS will generate four virtual layers. Review your datasets and save them, or add them to your overall project using "copy and paste."
+4 | AS4QGIS Synthesis will generate four virtual layers. Review your datasets and save them, or add them to your overall project using "copy and paste."
 
 Note: All point measurements with IDs that do not begin with four digits, as specified by the ArchSurv code, will be filtered out by the algorithm and excluded from the output data.
 
@@ -192,37 +166,42 @@ Note: All point measurements with IDs that do not begin with four digits, as spe
 
 Output Shapefiles
 
-Starting from the input file, AS4QGIS generates four shapefiles based on the 'shape type' defined in-field on the surveying device. These include the following shape types:
-vertices.shp | All measurement points that do not serve any further function than being vertex points of polylines or polygons.
-pointdata.shp | '00', '01', '51', '71', '81', '91'
-polylines.shp | '00', '02', '33', '52', '72', '92'
-polygons.shp | '03', '53', '61', '73', '93'
+Starting from the input file, AS4QGIS Synthesis generates four shapefiles based on the 'shape type' defined in-field on the surveying device. These include the following shape types:
+vertices | All measurement points that do not serve any further function than being vertex points of polylines or polygons.
+pointdata | '00', '01', '51', '71', '81', '91'
+polylines | '00', '02', '33', '52', '72', '92'
+polygons | '03', '53', '61', '73', '93'
 
 
 ----------------------------------------------------------------------
 
 
-vertices.shp
+vertices
 
 point-ID | the original ID of the point measurement as entered on the surveying device.
 x | the x/easting value of the point measurement.
 y | the y/northing value of the point measurement.
 z | the z/elevation value of the point measurement.
-designatio | the 'label/code' of the point measurement as entered on the surveying device.
+code | the 'label/code' of the point measurement as entered on the surveying device.
 ID | the identifier of the feature.
 shptype | the shape type as an integer.
 maxH | maximum elevation value of a feature.
 minH | minimal elevation value of a feature.
 maxHtemp | pseudo-date of the maximum elevation value of a feature.
 minHtemp | pseudo-date of the minimal elevation value of a feature.
-originfile | the file name of the processed 'delimited text'. 
+originfile | the file name of the processed 'delimited text'.
+of_espg | the epsg of the input_layer.
+IDstring | the identifier of the feature (string) as entered on the surveying device.
+ID_code | A composite identifier consisting of the 'IDstring' and the 'code' attribute fields.
+code_ID | A composite identifier consisting of the 'code' and the 'IDstring' attribute fields.
+
 
 ----------------------------------------------------------------------
 
-pointdata.shp
+pointdata
 
 ID | the identifier of the feature.
-designatio | the 'label/code' of the point measurement as entered on the surveying device.
+code | the 'label/code' of the point measurement as entered on the surveying device.
 shptype_n | the shape type as a string corresponding to the shape type integer.
 shptype | the shape type as an integer.
 point-prop | the property of a plug hole, sample, or find measurement.
@@ -238,45 +217,51 @@ maxH | maximum elevation value of a feature.
 minH | minimal elevation value of a feature.
 maxHtemp | pseudo-date of the maximum elevation value of a feature.
 minHtemp | pseudo-date of the maximum elevation value of a feature.
-originfile | the file name of the processed 'delimited text'. 
+originfile | the file name of the processed 'delimited text'.
+of_espg | the epsg of the input_layer.
 IDstring | the identifier of the feature (string) as entered on the surveying device.
-CAD-ID | A composite identifier consisting of the 'IDstring' and the 'designatio' attribute fields.
+ID_code | A composite identifier consisting of the 'IDstring' and the 'code' attribute fields.
+code_ID | A composite identifier consisting of the 'code' and the 'IDstring' attribute fields.
 
 ----------------------------------------------------------------------
 
-polylines.shp
+polylines
 
 ID | the identifier of the feature.
-designatio | the 'label/code' of the point measurement as entered on the surveying device.
+code | the 'label/code' of the point measurement as entered on the surveying device.
 shptype | the shape type as an integer.
 maxH | maximum elevation value of a feature.
 minH | minimal elevation value of a feature.
 maxHtemp | pseudo-date of the maximum elevation value of a feature.
 minHtemp | pseudo-date of the maximum elevation value of a feature.
-originfile | the file name of the processed 'delimited text'. 
+originfile | the file name of the processed 'delimited text'.
+of_espg | the epsg of the input_layer.
 IDstring | the identifier of the feature (string) as entered on the surveying device.
-CAD-ID | A composite identifier consisting of the 'IDstring' and the 'designatio' attribute fields.
+ID_code | A composite identifier consisting of the 'IDstring' and the 'code' attribute fields.
+code_ID | A composite identifier consisting of the 'code' and the 'IDstring' attribute fields.
 
 ----------------------------------------------------------------------
 
-polygons.shp
+polygons
 
 ID | the identifier of the feature.
-designatio | the 'label/code' of the point measurement as entered on the surveying device.
+code | the 'label/code' of the point measurement as entered on the surveying device.
 shptype | the shape type as an integer.
 maxH | maximum elevation value of a feature.
 minH | minimal elevation value of a feature.
 maxHtemp | pseudo-date of the maximum elevation value of a feature.
 minHtemp | pseudo-date of the maximum elevation value of a feature.
-originfile | the file name of the processed 'delimited text'. 
+originfile | the file name of the processed 'delimited text'.
+of_espg | the epsg of the input_layer.
 IDstring | the identifier of the feature (string) as entered on the surveying device.
-CAD-ID | A composite identifier consisting of the 'IDstring' and the 'designatio' attribute fields.
+ID_code | A composite identifier consisting of the 'IDstring' and the 'code' attribute fields.
+code_ID | A composite identifier consisting of the 'code' and the 'IDstring' attribute fields.
 
 ----------------------------------------------------------------------
 
 Temporal Controller
 
-The Chronos and Chimaira variations of the algorithm generate the pseudo-data fields “maxHtemp” and “minHtemp” based on the attribute fields “maxH” and “minH”. In other words, the minimum and maximum elevation values of a feature measurement are translated into a date.
+Synthesis and Psyche generate the pseudo-data fields “maxHtemp” and “minHtemp” based on the attribute fields “maxH” and “minH”. In other words, the minimum and maximum elevation values of a feature measurement are translated into a date.
 
 The following rules apply to this pseudo-date conversion:
 
