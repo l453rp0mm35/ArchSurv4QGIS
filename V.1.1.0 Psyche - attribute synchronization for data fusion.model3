@@ -1,0 +1,1384 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="native:aggregate_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:aggregate" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Groups all vertices by their 'ID' and calculates the maximum elevation ('maxH') and minimum elevation ('minH') for each group.  Each feature ID receives its highest and lowest elevation values." type="QString" name="component_description"/>
+        <Option value="149.57909463654482" type="double" name="component_height"/>
+        <Option value="1196.0748524420435" type="double" name="component_pos_x"/>
+        <Option value="1079.9135237812839" type="double" name="component_pos_y"/>
+        <Option value="199.5893408151195" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="F.3 - Aggregate Elevation by ID" type="QString" name="component_description"/>
+      <Option value="109.69222978846932" type="double" name="component_height"/>
+      <Option value="858.1695009899538" type="double" name="component_pos_x"/>
+      <Option value="1078.8918289168053" type="double" name="component_pos_y"/>
+      <Option value="226.24218210201863" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:aggregate_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="AGGREGATES">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="List" name="static_value">
+              <Option type="Map">
+                <Option value="first_value" type="QString" name="aggregate"/>
+                <Option value="," type="QString" name="delimiter"/>
+                <Option value="&quot;ID&quot;" type="QString" name="input"/>
+                <Option value="5" type="int" name="length"/>
+                <Option value="ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="maximum" type="QString" name="aggregate"/>
+                <Option value="," type="QString" name="delimiter"/>
+                <Option value="&quot;z&quot;" type="QString" name="input"/>
+                <Option value="20" type="int" name="length"/>
+                <Option value="maxH" type="QString" name="name"/>
+                <Option value="3" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="6" type="int" name="type"/>
+                <Option value="double precision" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="minimum" type="QString" name="aggregate"/>
+                <Option value="," type="QString" name="delimiter"/>
+                <Option value="&quot;z&quot;" type="QString" name="input"/>
+                <Option value="20" type="int" name="length"/>
+                <Option value="minH" type="QString" name="name"/>
+                <Option value="3" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="6" type="int" name="type"/>
+                <Option value="double precision" type="QString" name="type_name"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="GROUP_BY">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="ID" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:fieldcalculator_12" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractvertices_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractvertices" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Extracts all vertices (nodes) from line and polygon geometries and creates point features from them.  Each vertex retains the attributes of the original feature,  enabling height analysis." type="QString" name="component_description"/>
+        <Option value="189.74228183158067" type="double" name="component_height"/>
+        <Option value="1195.5585604626674" type="double" name="component_pos_x"/>
+        <Option value="740.1416809574037" type="double" name="component_pos_y"/>
+        <Option value="202.2145887245162" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="F.1 - Vertex Extraction" type="QString" name="component_description"/>
+      <Option value="109.53948289004813" type="double" name="component_height"/>
+      <Option value="858.2162402743397" type="double" name="component_pos_x"/>
+      <Option value="763.1328431345697" type="double" name="component_pos_y"/>
+      <Option value="226.53147061648798" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractvertices_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:mergevectorlayers_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:fieldcalculator_12">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:fieldcalculator" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Calculates a Z-value (elevation) for each extracted vertex and stores it in the new field 'z' as a decimal number with 3 decimal places." type="QString" name="component_description"/>
+        <Option value="146.00884357339066" type="double" name="component_height"/>
+        <Option value="1195.5502686432633" type="double" name="component_pos_x"/>
+        <Option value="919.627035447882" type="double" name="component_pos_y"/>
+        <Option value="200.66499328961993" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="F.2 - Calculate Vertex Elevations" type="QString" name="component_description"/>
+      <Option value="110.75995182082625" type="double" name="component_height"/>
+      <Option value="858.925921048397" type="double" name="component_pos_x"/>
+      <Option value="917.5608113867235" type="double" name="component_pos_y"/>
+      <Option value="225.24014704401725" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:fieldcalculator_12" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELD_LENGTH">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_NAME">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="z" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_PRECISION">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="3" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_TYPE">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value=" $z " type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:extractvertices_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:fieldcalculator_6">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:fieldcalculator" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Generates a pseudo-date 'maxHtemp' from the maximum elevation value. The integer part is interpreted as the year (plus 1000), the decimal part determines the month (in 100-unit steps). Enables temporal visualization in QGIS." type="QString" name="component_description"/>
+        <Option value="202.28742666931635" type="double" name="component_height"/>
+        <Option value="1196.0195911831893" type="double" name="component_pos_x"/>
+        <Option value="1465.1895842427862" type="double" name="component_pos_y"/>
+        <Option value="197.1566129239825" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="G.1 - Generate Temporal Date from maxH" type="QString" name="component_description"/>
+      <Option value="111.3488081059551" type="double" name="component_height"/>
+      <Option value="858.6141767022355" type="double" name="component_pos_x"/>
+      <Option value="1488.9727328006604" type="double" name="component_pos_y"/>
+      <Option value="226.69709191450917" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:fieldcalculator_6" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELD_LENGTH">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_NAME">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="maxHtemp" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_PRECISION">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_TYPE">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="3" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="make_date(&#xa;    to_int(substr(to_string(&quot;maxH&quot; + 1000), 1, 4)),&#xa;    CASE &#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 100 THEN 1&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 200 THEN 2&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 300 THEN 3&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 400 THEN 4&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 500 THEN 5&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 600 THEN 6&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 700 THEN 7&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 800 THEN 8&#xa;        WHEN to_int(right(rpad(to_string(&quot;maxH&quot; + 1000), 8, '0'), 3)) &lt; 900 THEN 9&#xa;        ELSE 10&#xa;    END,&#xa;    1&#xa;)" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:joinattributestable_3" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:fieldcalculator_8">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:fieldcalculator" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Generates a pseudo-date 'minHtemp' from the minimum elevation value. The integer part is interpreted as the year (plus 1000), the decimal part determines the month (in 100-unit steps). Enables temporal visualization in QGIS." type="QString" name="component_description"/>
+        <Option value="192.22089522408763" type="double" name="component_height"/>
+        <Option value="1196.028415443976" type="double" name="component_pos_x"/>
+        <Option value="1673.5380750168213" type="double" name="component_pos_y"/>
+        <Option value="197.15554859086913" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="G.2 - Generate Temporal Date from minH" type="QString" name="component_description"/>
+      <Option value="113.23971191228641" type="double" name="component_height"/>
+      <Option value="859.2447046428521" type="double" name="component_pos_x"/>
+      <Option value="1655.624146599893" type="double" name="component_pos_y"/>
+      <Option value="226.6970919145091" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:fieldcalculator_8" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELD_LENGTH">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_NAME">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="minHtemp" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_PRECISION">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_TYPE">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="3" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="make_date(&#xa;    to_int(substr(to_string(&quot;minH&quot; + 1000), 1, 4)),&#xa;    CASE&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 100 THEN 1&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 200 THEN 2&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 300 THEN 3&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 400 THEN 4&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 500 THEN 5&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 600 THEN 6&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 700 THEN 7&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 800 THEN 8&#xa;        WHEN to_int(right(rpad(to_string(&quot;minH&quot; + 1000), 8, '0'), 3)) &lt; 900 THEN 9&#xa;        ELSE 10&#xa;    END,&#xa;    1&#xa;)" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:fieldcalculator_6" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:filter_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option type="Map" name="alg_config">
+        <Option type="List" name="outputs">
+          <Option type="Map">
+            <Option value=" @identifier_composition = 0" type="QString" name="expression"/>
+            <Option value="false" type="bool" name="isModelOutput"/>
+            <Option value="ID+CODE" type="QString" name="name"/>
+          </Option>
+          <Option type="Map">
+            <Option value=" @identifier_composition = 1" type="QString" name="expression"/>
+            <Option value="false" type="bool" name="isModelOutput"/>
+            <Option value="ID_CODE" type="QString" name="name"/>
+          </Option>
+          <Option type="Map">
+            <Option value=" @identifier_composition = 2" type="QString" name="expression"/>
+            <Option value="false" type="bool" name="isModelOutput"/>
+            <Option value="CODE_ID" type="QString" name="name"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option value="native:filter" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Filters the input features based on the selected identifier composition into three separate outputs: 'ID'+'Code', 'ID_Code', or 'Code_ID'.  Each output is processed separately in parallel paths." type="QString" name="component_description"/>
+        <Option value="103.11034450688311" type="double" name="component_height"/>
+        <Option value="1309.566312878468" type="double" name="component_pos_x"/>
+        <Option value="151.40758205658054" type="double" name="component_pos_y"/>
+        <Option value="226.4919733217099" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="A.1 - Filter by Identifier Composition" type="QString" name="component_description"/>
+      <Option value="104.37945955838074" type="double" name="component_height"/>
+      <Option value="1004.6229870913953" type="double" name="component_pos_x"/>
+      <Option value="151.20876220468136" type="double" name="component_pos_y"/>
+      <Option value="228.29127379213156" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:filter_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="input_layer" type="QString" name="parameter_name"/>
+            <Option value="0" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:joinattributestable_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinattributestable" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Joins the attributes calculated from vertices (maxH, minH, maxHtemp, minHtemp) with the original input layer via the 'ID' field.  The original line and polygon geometries receive the calculated elevation information." type="QString" name="component_description"/>
+        <Option value="181.4902966988991" type="double" name="component_height"/>
+        <Option value="1195.3894240136517" type="double" name="component_pos_x"/>
+        <Option value="1871.2246694814908" type="double" name="component_pos_y"/>
+        <Option value="196.92759098525954" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="H.1 - Join Elevation Data to Original Geometries" type="QString" name="component_description"/>
+      <Option value="112.30003247452373" type="double" name="component_height"/>
+      <Option value="859.3150730254386" type="double" name="component_pos_x"/>
+      <Option value="1894.090909043792" type="double" name="component_pos_y"/>
+      <Option value="227.42108378456047" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinattributestable_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DISCARD_NONMATCHING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="false" type="bool" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="ID" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELDS_TO_COPY">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="StringList" name="static_value">
+              <Option value="maxH" type="QString"/>
+              <Option value="minH" type="QString"/>
+              <Option value="maxHtemp" type="QString"/>
+              <Option value="minHtemp" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_2">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="ID" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:mergevectorlayers_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_2">
+          <Option type="Map">
+            <Option value="native:fieldcalculator_8" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="METHOD">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="1" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="PREFIX">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:joinattributestable_3">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinattributestable" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Joins the aggregated elevation values (maxH, minH) back to the feature table via the 'ID' field. Uses a 1:1 join to ensure each ID gets its elevation range." type="QString" name="component_description"/>
+        <Option value="184.0242444335429" type="double" name="component_height"/>
+        <Option value="1196.3068245360375" type="double" name="component_pos_x"/>
+        <Option value="1260.2815689939298" type="double" name="component_pos_y"/>
+        <Option value="198.2871570649909" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="F.4 - Join Elevation Attributes" type="QString" name="component_description"/>
+      <Option value="109.90929860388235" type="double" name="component_height"/>
+      <Option value="857.9232489879533" type="double" name="component_pos_x"/>
+      <Option value="1235.5097069468643" type="double" name="component_pos_y"/>
+      <Option value="225.21226684363296" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinattributestable_3" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DISCARD_NONMATCHING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="false" type="bool" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="ID" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELDS_TO_COPY">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="StringList" name="static_value">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_2">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="ID" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:aggregate_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_2">
+          <Option type="Map">
+            <Option value="native:aggregate_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="METHOD">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="1" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="PREFIX">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:mergevectorlayers_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:mergevectorlayers" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Merges the three separately processed feature paths (from B, C, and D) into a single layer.  All features now have uniform 'ID' and 'Code' fields regardless of their original format." type="QString" name="component_description"/>
+        <Option value="96.29230571519781" type="double" name="component_height"/>
+        <Option value="1327.548752804222" type="double" name="component_pos_x"/>
+        <Option value="566.8750934032712" type="double" name="component_pos_y"/>
+        <Option value="192.56902575567244" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="E. Merge Paths via ID" type="QString" name="component_description"/>
+      <Option value="99.72653484482629" type="double" name="component_height"/>
+      <Option value="990.6860405589566" type="double" name="component_pos_x"/>
+      <Option value="566.9922786037703" type="double" name="component_pos_y"/>
+      <Option value="200.8038039683958" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:mergevectorlayers_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option value="native:refactorfields_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:refactorfields_2" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:refactorfields_3" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:refactorfields_1">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Creates two new fields: 'ID' from the ID field and 'Code' from the Code field (or '---' if no Code field was selected).  This path processes features where ID and Code are stored in separate attribute fields." type="QString" name="component_description"/>
+        <Option value="238.41857240801465" type="double" name="component_height"/>
+        <Option value="912.7402472954748" type="double" name="component_pos_x"/>
+        <Option value="352.20456663886796" type="double" name="component_pos_y"/>
+        <Option value="157.97758894950178" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="B. Refactor Fields 'ID'+'Code': Separate ID and Code" type="QString" name="component_description"/>
+      <Option value="146.51475069200546" type="double" name="component_height"/>
+      <Option value="726.680063438968" type="double" name="component_pos_x"/>
+      <Option value="381.2039075821105" type="double" name="component_pos_y"/>
+      <Option value="156.49912353124114" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_1" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELDS_MAPPING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="List" name="static_value">
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="attribute( $currentfeature , @id_field  )" type="QString" name="expression"/>
+                <Option value="5" type="int" name="length"/>
+                <Option value="ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="CASE&#xa;WHEN @code_field IS NULL&#xa;THEN '---'&#xa;ELSE attribute($currentfeature, @code_field)&#xa;END" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="Code" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:filter_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT_ID+CODE" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:refactorfields_2">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Splits the value of the ID field at the underscore delimiter and assigns the first part to the 'ID' field and the second part to the 'Code' field (format: 'ID_Code')." type="QString" name="component_description"/>
+        <Option value="238.74411103933522" type="double" name="component_height"/>
+        <Option value="1288.0552664180143" type="double" name="component_pos_x"/>
+        <Option value="352.57570574800957" type="double" name="component_pos_y"/>
+        <Option value="148.79485622033144" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="C. Refactor Fields 'ID_Code': Split ID_Code Format" type="QString" name="component_description"/>
+      <Option value="147.23501528715516" type="double" name="component_height"/>
+      <Option value="1104.3136926061725" type="double" name="component_pos_x"/>
+      <Option value="381.89222613317514" type="double" name="component_pos_y"/>
+      <Option value="155.62812840344333" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_2" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELDS_MAPPING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="List" name="static_value">
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="array_get(string_to_array( attribute($currentfeature, @id_field) , '_'), 0)" type="QString" name="expression"/>
+                <Option value="5" type="int" name="length"/>
+                <Option value="ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="array_get(string_to_array( attribute($currentfeature, @id_field) , '_'), 1)" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="Code" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:filter_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT_ID_CODE" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:refactorfields_3">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Splits the value of the ID field at the underscore delimiter and assigns the first part to the 'Code' field and the second part to the 'ID' field (format: 'Code_ID')." type="QString" name="component_description"/>
+        <Option value="238.19216693985913" type="double" name="component_height"/>
+        <Option value="1657.0663389131496" type="double" name="component_pos_x"/>
+        <Option value="352.1165846235475" type="double" name="component_pos_y"/>
+        <Option value="145.04741818422303" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="D. Refactor Fields 'Code_ID': Split Code_ID Format" type="QString" name="component_description"/>
+      <Option value="146.9343187941127" type="double" name="component_height"/>
+      <Option value="1473.6977244267837" type="double" name="component_pos_x"/>
+      <Option value="381.23148965962184" type="double" name="component_pos_y"/>
+      <Option value="154.45709814340069" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_3" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELDS_MAPPING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="List" name="static_value">
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="array_get(string_to_array( attribute($currentfeature, @id_field) , '_'), 1)" type="QString" name="expression"/>
+                <Option value="5" type="int" name="length"/>
+                <Option value="ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="array_get(string_to_array( attribute($currentfeature, @id_field) , '_'), 0)" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="Code" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:filter_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT_CODE_ID" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:refactorfields_4">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Finalizes the field structure: Creates 'shptype' based on geometry type (2=Line, 3=Polygon), adds layer metadata (originfile, of_epsg), and generates formatted identifier fields (IDstring, ID_code, code_ID) for compatibility with downstream workflows." type="QString" name="component_description"/>
+        <Option value="133.7718083287209" type="double" name="component_height"/>
+        <Option value="1195.575150413655" type="double" name="component_pos_x"/>
+        <Option value="2038.9434096096145" type="double" name="component_pos_y"/>
+        <Option value="196.84455974791555" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="H.2 - Finalize Output Fields" type="QString" name="component_description"/>
+      <Option value="111.95423121438739" type="double" name="component_height"/>
+      <Option value="858.7101642564572" type="double" name="component_pos_x"/>
+      <Option value="2042.0367997534709" type="double" name="component_pos_y"/>
+      <Option value="226.85357148459047" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_4" type="QString" name="id"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="psyche_output">
+          <Option value="native:refactorfields_4" type="QString" name="child_id"/>
+          <Option value="" type="QString" name="color"/>
+          <Option type="Map" name="comment">
+            <Option value="166,206,227,255" type="QString" name="color"/>
+            <Option value="Specify the output location for the processed layer. The output will contain all original features with added elevation and identifier attributes compatible with AS4QGIS Synthesis outputs." type="QString" name="component_description"/>
+            <Option value="94.21162615593539" type="double" name="component_height"/>
+            <Option value="1195.6195198145826" type="double" name="component_pos_x"/>
+            <Option value="2164.5897598369866" type="double" name="component_pos_y"/>
+            <Option value="195.98261782637383" type="double" name="component_width"/>
+            <Option value="true" type="bool" name="outputs_collapsed"/>
+            <Option value="true" type="bool" name="parameters_collapsed"/>
+          </Option>
+          <Option value="psyche_output" type="QString" name="component_description"/>
+          <Option value="60.15857601041671" type="double" name="component_height"/>
+          <Option value="860.0425439798421" type="double" name="component_pos_x"/>
+          <Option value="2158.198632596524" type="double" name="component_pos_y"/>
+          <Option value="226.91802873160043" type="double" name="component_width"/>
+          <Option type="Map" name="default_value">
+            <Option value="QgsProcessingOutputLayerDefinition" type="QString" name="class"/>
+            <Option type="Map" name="create_options">
+              <Option value="UTF-8" type="QString" name="fileEncoding"/>
+            </Option>
+            <Option type="Map" name="sink">
+              <Option value="true" type="bool" name="active"/>
+              <Option value="1" type="int" name="type"/>
+              <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
+            </Option>
+          </Option>
+          <Option value="true" type="bool" name="mandatory"/>
+          <Option value="psyche_output" type="QString" name="name"/>
+          <Option value="OUTPUT" type="QString" name="output_name"/>
+          <Option value="true" type="bool" name="outputs_collapsed"/>
+          <Option value="true" type="bool" name="parameters_collapsed"/>
+        </Option>
+      </Option>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELDS_MAPPING">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="List" name="static_value">
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="ID" type="QString" name="expression"/>
+                <Option value="5" type="int" name="length"/>
+                <Option value="ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="code" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="code" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="CASE&#xa;WHEN geometry_type($geometry) = 'Line' THEN 2&#xa;WHEN geometry_type($geometry) = 'Polygon' THEN 3&#xa;else NULL&#xa;END" type="QString" name="expression"/>
+                <Option value="2" type="int" name="length"/>
+                <Option value="shptype" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="2" type="int" name="type"/>
+                <Option value="integer" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="maxH" type="QString" name="expression"/>
+                <Option value="20" type="int" name="length"/>
+                <Option value="maxH" type="QString" name="name"/>
+                <Option value="3" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="6" type="int" name="type"/>
+                <Option value="double precision" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="minH" type="QString" name="expression"/>
+                <Option value="20" type="int" name="length"/>
+                <Option value="minH" type="QString" name="name"/>
+                <Option value="3" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="6" type="int" name="type"/>
+                <Option value="double precision" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="maxHtemp" type="QString" name="expression"/>
+                <Option value="0" type="int" name="length"/>
+                <Option value="maxHtemp" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="14" type="int" name="type"/>
+                <Option value="date" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="minHtemp" type="QString" name="expression"/>
+                <Option value="0" type="int" name="length"/>
+                <Option value="minHtemp" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="14" type="int" name="type"/>
+                <Option value="date" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="layer_property( @input_layer, 'name')" type="QString" name="expression"/>
+                <Option value="254" type="int" name="length"/>
+                <Option value="originfile" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="layer_property( @input_layer, 'crs')" type="QString" name="expression"/>
+                <Option value="254" type="int" name="length"/>
+                <Option value="of_epsg" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="lpad(&#xa;  to_string(&quot;ID&quot;),&#xa;  4,&#xa;  '0'&#xa;)&#xa;" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="IDstring" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="lpad(&#xa;  to_string(&quot;ID&quot;),&#xa;  4,&#xa;  '0'&#xa;)&#xa; ||  '_'  || &#xa; &quot;code&quot;" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="ID_code" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+              <Option type="Map">
+                <Option value="" type="QString" name="alias"/>
+                <Option value="" type="QString" name="comment"/>
+                <Option value="&quot;code&quot;&#xa; ||  '_'  || &#xa; lpad(&#xa;  to_string(&quot;ID&quot;),&#xa;  4,&#xa;  '0'&#xa;)" type="QString" name="expression"/>
+                <Option value="100" type="int" name="length"/>
+                <Option value="code_ID" type="QString" name="name"/>
+                <Option value="0" type="int" name="precision"/>
+                <Option value="0" type="int" name="sub_type"/>
+                <Option value="10" type="int" name="type"/>
+                <Option value="text" type="QString" name="type_name"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="native:joinattributestable_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="Map" name="designerParameterValues">
+    <Option value="designatio" type="QString" name="code_field"/>
+    <Option value="CAD-ID_1" type="QString" name="id_field"/>
+    <Option value="1" type="int" name="identifier_composition"/>
+    <Option value="Refactored_7b10b5a0_ffab_494a_837f_305997842de6" type="QString" name="input_layer"/>
+    <Option type="QgsProcessingOutputLayerDefinition" name="test">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option value="UTF-8" type="QString" name="fileEncoding"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option value="true" type="bool" name="active"/>
+          <Option value="1" type="int" name="type"/>
+          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="List" name="groupBoxes">
+    <Option type="Map">
+      <Option value="157,255,121,255" type="QString" name="color"/>
+      <Option value="                                                  &#xa;                                                  &#xa;                     **   =                       &#xa;                    ****   =+                     &#xa;                   ******   ++=                   &#xa;                  ********   +++                  &#xa;                 *********    +++=                &#xa;                *********       +++                &#xa;               *********    *      +++               &#xa;              *********    ***    =+++              &#xa;             *********    *****    =+++             &#xa;            *********    *******    =+++            &#xa;           *********      *********    ++++           &#xa;          *********        *********    +++=          &#xa;         *********          *********      =+++         &#xa;         *********               *********   +++=        &#xa;                                                *********     +++=       &#xa;      *******************    *********   ++++      &#xa;     *********************    *********   +++=     &#xa;    ***********************   *********   +++=    &#xa;    ***********************    *********    ===    &#xa;                                                  &#xa;                                                  " type="QString" name="component_description"/>
+      <Option value="403.01433405766625" type="double" name="component_height"/>
+      <Option value="326.0776790609998" type="double" name="component_pos_x"/>
+      <Option value="846.3583195291839" type="double" name="component_pos_y"/>
+      <Option value="565.1135131788858" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{045173f5-74f4-42ce-95d6-851d5ca12a2d}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="A. Input Format Identification" type="QString" name="component_description"/>
+      <Option value="152.43715803872152" type="double" name="component_height"/>
+      <Option value="1173.9339786344449" type="double" name="component_pos_x"/>
+      <Option value="146.07134329525252" type="double" name="component_pos_y"/>
+      <Option value="1109.428922560448" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{074aae25-fc3e-4612-a339-2c0acef57fd8}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="G. Pseudo Temporal Height Datum per ID" type="QString" name="component_description"/>
+      <Option value="404.9745306898597" type="double" name="component_height"/>
+      <Option value="851.8848198542945" type="double" name="component_pos_x"/>
+      <Option value="1566.488558099936" type="double" name="component_pos_y"/>
+      <Option value="464.5706247138141" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{0ef6d0ca-5390-494a-a52b-63971a0f59c0}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="51,160,44,255" type="QString" name="color"/>
+      <Option value="20.01.2026 - latest Update" type="QString" name="component_description"/>
+      <Option value="43.93195137310547" type="double" name="component_height"/>
+      <Option value="326.00373766780115" type="double" name="component_pos_x"/>
+      <Option value="504.57489922463685" type="double" name="component_pos_y"/>
+      <Option value="565.5262094111796" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{100073bb-d302-4327-a730-d8c4c024f4b7}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="F. Factual Max &amp; Min Heights per ID" type="QString" name="component_description"/>
+      <Option value="706.619687405195" type="double" name="component_height"/>
+      <Option value="851.4769337479433" type="double" name="component_pos_x"/>
+      <Option value="998.8009993403128" type="double" name="component_pos_y"/>
+      <Option value="464.3602947667054" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{447b036c-4f0b-43b7-a6ca-486282373372}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="H. Final Adjustments and Attribute Values" type="QString" name="component_description"/>
+      <Option value="431.81082005023495" type="double" name="component_height"/>
+      <Option value="853.3766551088587" type="double" name="component_pos_x"/>
+      <Option value="1996.3304515707805" type="double" name="component_pos_y"/>
+      <Option value="464.5706247138141" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{530a1bad-70ec-4ef8-9993-9eab75c4cdbb}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="B. Identifier_Composition 'ID'+'Code'&#xa;e.g. '1'+'VF' / '0001'+'VF'&#xa;" type="QString" name="component_description"/>
+      <Option value="238.26453968291088" type="double" name="component_height"/>
+      <Option value="722.8079979872448" type="double" name="component_pos_x"/>
+      <Option value="352.31320752922454" type="double" name="component_pos_y"/>
+      <Option value="206.0382758802259" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{6bdc40b4-0a10-4bdf-9ece-3368c849c286}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="51,160,44,255" type="QString" name="color"/>
+      <Option value="generated with QGIS LTR 3.34.12-Prizren" type="QString" name="component_description"/>
+      <Option value="44.340773369260006" type="double" name="component_height"/>
+      <Option value="325.95331847163123" type="double" name="component_pos_x"/>
+      <Option value="555.8132966954585" type="double" name="component_pos_y"/>
+      <Option value="565.1973676310823" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{7377ec82-8da2-4f56-a8f8-35778b257d93}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="253,191,111,255" type="QString" name="color"/>
+      <Option value="&#xa;Purpose:&#xa;&#xa;Psyche complements the AS4QGIS 1.1.9 Synthesis algorithm by adding the same attribute structure to existing line or polygon measurements that Synthesis generates from point data. This enables seamless merging of different survey datasets.&#xa;&#xa;_____________________________&#xa;&#xa;Background:&#xa;&#xa;While total station fieldwork produces only point measurements that Synthesis processes according to their &quot;ArchSurv-String&quot; and &quot;Code&quot; Values into points, polylines, and polygons in-office, it's common to have polylines and polygons created by other means—such as digitizing on georeferenced 3D models or importing existing CAD files. Psyche standardizes these datasets to match the Synthesis output format.&#xa;&#xa;&#xa;_____________________________&#xa;&#xa;What the Algorithm Does:&#xa;&#xa;Psyche processes line and polygon features with Z-values to generate:&#xa;&#xa;- Standardized ID and Code fields from various identifier formats&#xa;- Elevation attributes (maxH, minH) calculated from geometry vertices&#xa;- Temporal pseudo-dates (maxHtemp, minHtemp) for visualization in QGIS temporal controller&#xa;- Geometry type classification (shptype: 2=Line, 3=Polygon)&#xa;- Formatted identifier strings (IDstring, ID_code, code_ID)&#xa;- Layer metadata (originfile, of_epsg)&#xa;&#xa;The result is a dataset with the same attribute structure as Synthesis outputs, allowing different survey data sources to be combined and analyzed together seamlessly." type="QString" name="component_description"/>
+      <Option value="709.6260022017307" type="double" name="component_height"/>
+      <Option value="325.435862827914" type="double" name="component_pos_x"/>
+      <Option value="1413.8675100119142" type="double" name="component_pos_y"/>
+      <Option value="569.6653482321699" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{93928469-d22a-481b-82d4-ed88633d28a0}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="51,160,44,255" type="QString" name="color"/>
+      <Option value="Python-Version: 3.9.5&#xa;" type="QString" name="component_description"/>
+      <Option value="49.79897408730454" type="double" name="component_height"/>
+      <Option value="325.7910711543982" type="double" name="component_pos_x"/>
+      <Option value="610.8580083075461" type="double" name="component_pos_y"/>
+      <Option value="564.9585771159495" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{a143474e-d271-4c54-a591-e0427e367669}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="236,201,119,255" type="QString" name="color"/>
+      <Option value="Version Control&#xa;------------------&#xa;Version 1.0.0 - 20.01.26&#xa;Initial release of Psyche algorithm as a companion tool to AS4QGIS 1.1.9 Synthesis, enabling attribute standardization for line and polygon survey data." type="QString" name="component_description"/>
+      <Option value="1567.7038533829136" type="double" name="component_height"/>
+      <Option value="1517.5251228162506" type="double" name="component_pos_x"/>
+      <Option value="1428.8964252424012" type="double" name="component_pos_y"/>
+      <Option value="422.96621372849967" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{b0db705a-ba1e-436d-9ff0-a1a015d1d673}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="C. Identifier_Composition 'ID_Code'&#xa;e.g. '1_VF' / '0001_VF'&#xa;" type="QString" name="component_description"/>
+      <Option value="238.2645396829109" type="double" name="component_height"/>
+      <Option value="1103.4453272269247" type="double" name="component_pos_x"/>
+      <Option value="352.33313414196186" type="double" name="component_pos_y"/>
+      <Option value="206.03827588022585" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{bbf2dc50-8cb4-493b-a716-ec9ade82af79}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="D. Identifier_Composition 'Code'+'ID'&#xa;e.g.  'F7'+'1' / 'F7'+'1000'&#xa;" type="QString" name="component_description"/>
+      <Option value="238.2645396829109" type="double" name="component_height"/>
+      <Option value="1473.0038473646716" type="double" name="component_pos_x"/>
+      <Option value="352.33313414196186" type="double" name="component_pos_y"/>
+      <Option value="206.03827588022568" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{c5e41d6c-78cd-47b3-9f94-c54d9b2e5c3b}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="230,224,181,255" type="QString" name="color"/>
+      <Option value="AS4QGIS - ArchSurv for QGIS (by Thomas Leutgeb)&#xa;V.1.0.0 - Psyche" type="QString" name="component_description"/>
+      <Option value="42.83193928949876" type="double" name="component_height"/>
+      <Option value="1174.0553468044407" type="double" name="component_pos_x"/>
+      <Option value="39.60860016494517" type="double" name="component_pos_y"/>
+      <Option value="1109.5769831014343" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{d06c1352-d8cd-4bc2-9dd5-27c03d14c6e0}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="" type="QString" name="color"/>
+      <Option value="E. Connect Paths" type="QString" name="component_description"/>
+      <Option value="152.43715803872152" type="double" name="component_height"/>
+      <Option value="1174.6245247455977" type="double" name="component_pos_x"/>
+      <Option value="558.9038856978341" type="double" name="component_pos_y"/>
+      <Option value="1110.1545154675766" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{d3af064b-417a-4e51-9d44-dda74b9b2792}" type="QString" name="uuid"/>
+    </Option>
+    <Option type="Map">
+      <Option value="230,220,204,255" type="QString" name="color"/>
+      <Option value="&#xa;How to Use&#xa;&#xa;1 - Load your data: Import your line or polygon layer with Z-values into QGIS&#xa;&#xa;2 - Select the layer: Choose your input layer in the Input_Layer parameter&#xa;&#xa;3 - Identify your ID field: Select which field contains your identifier information&#xa;&#xa;4 - Choose the format: Select how your identifiers are structured (separate fields or combined with underscore)&#xa;&#xa;5 - Add Code field if needed: If using separate ID and Code fields, select the Code field&#xa;&#xa;6 - Run: Execute the algorithm and specify where to save the output&#xa;&#xa;7 - Result: Your features now have standardized attributes compatible with Synthesis outputs for merging and further analysis" type="QString" name="component_description"/>
+      <Option value="431.7913080480521" type="double" name="component_height"/>
+      <Option value="324.9476344277128" type="double" name="component_pos_x"/>
+      <Option value="1995.8305923052997" type="double" name="component_pos_y"/>
+      <Option value="571.2865485350778" type="double" name="component_width"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="{e2fa1d0b-b2ea-4cb7-82e9-7b27cfa15ffe}" type="QString" name="uuid"/>
+    </Option>
+  </Option>
+  <Option type="Map" name="help">
+    <Option value="Thomas Leutgeb, Stadtarchäologie Wien" type="QString" name="ALG_CREATOR"/>
+    <Option value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-weight:600;&quot;>V.1.1.0 Psyche&lt;/span> is a &lt;span style=&quot; text-decoration: underline;&quot;>data harmonization tool&lt;/span> within the &lt;span style=&quot; text-decoration: underline;&quot;>ArchSurv4QGIS suite&lt;/span>. &lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>Its primary function is to equip existing line or polygon data from heterogeneous sources (e.g., CAD plans, digitized 3D models, third-party GIS exports) with the same standardized attribute schema generated by the main V.1.1.9 Synthesis algorithm. It enables the seamless merging and unified analysis of archaeological survey data, regardless of its original creation method. It ensures data consistency for cartography, interpretation, and database integration.&lt;/p>&lt;/body>&lt;/html>" type="QString" name="ALG_DESC"/>
+    <Option value="" type="QString" name="ALG_HELP_CREATOR"/>
+    <Option value="V.1.0.0 Psyche" type="QString" name="ALG_VERSION"/>
+    <Option value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;br />&lt;/p>&lt;/body>&lt;/html>" type="QString" name="EXAMPLES"/>
+    <Option value="https://www.archsurv4qgis.com/workflow" type="QString" name="HELP_URL"/>
+    <Option value="Harmonizes external line/polygon data to the ArchSurv4QGIS attribute standard for seamless data fusion." type="QString" name="SHORT_DESCRIPTION"/>
+    <Option value="Attribute field containing code values: &#xa;Required when: Identifier_Composition is set to 'ID'+'Code'; &#xa;Not processed when: Using 'ID_Code' or 'Code_ID' formats; &#xa;Default: If not provided when using 'ID'+'Code' format, code values will be set to '---'." type="QString" name="code_field"/>
+    <Option value="Contains the primary identifier data in one of three supported formats: &#xa;1. &quot;ID&quot;+&quot;Code&quot; (e.g., '1' or '0001'); 2. &quot;ID_Code&quot; (e.g., '1_VF'); 3. &quot;Code_ID&quot; (e.g., 'F7_1')" type="QString" name="id_field"/>
+    <Option value="Structure of identifiers in the input data: Must match the selected ID_Field format of the selected Input_Layer.&#xa;&#xa;&#xa;" type="QString" name="identifier_composition"/>
+    <Option value="Layer containing features to process:&#xa;Vector layer (Line or Polygon geometry); &#xa;Requirement: Must contain Z-values (elevation data)" type="QString" name="input_layer"/>
+    <Option value="Processed layer with added attributes; &#xa;Geometry type: Same as input (Lines or Polygons); &#xa;Added attributes: ID, code, shptype, maxH, minH, maxHtemp, minHtemp, originfile, of_epsg, ID_code, code_ID." type="QString" name="psyche_output"/>
+  </Option>
+  <Option value="Version2" type="QString" name="internal_version"/>
+  <Option name="modelVariables"/>
+  <Option value="AS4QGIS" type="QString" name="model_group"/>
+  <Option value="V.1.1.0 Psyche - attribute synchronization for data fusion" type="QString" name="model_name"/>
+  <Option value="charted_spatial_records" type="QString" name="outputGroup"/>
+  <Option type="StringList" name="outputOrder">
+    <Option value="native:refactorfields_4:OUTPUT" type="QString"/>
+  </Option>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="code_field">
+      <Option value="false" type="bool" name="allow_multiple"/>
+      <Option value="-1" type="int" name="data_type"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="false" type="bool" name="default_to_all_fields"/>
+      <Option value="Code_Field" type="QString" name="description"/>
+      <Option value="8" type="int" name="flags"/>
+      <Option value="Attribute field containing code values: &#xa;Required when: Identifier_Composition is set to 'ID'+'Code'; &#xa;Not processed when: Using 'ID_Code' or 'Code_ID' formats; &#xa;Default: If not provided when using 'ID'+'Code' format, code values will be set to '---'." type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="code_field" type="QString" name="name"/>
+      <Option value="field" type="QString" name="parameter_type"/>
+      <Option value="input_layer" type="QString" name="parent_layer"/>
+    </Option>
+    <Option type="Map" name="id_field">
+      <Option value="false" type="bool" name="allow_multiple"/>
+      <Option value="-1" type="int" name="data_type"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="false" type="bool" name="default_to_all_fields"/>
+      <Option value="ID_Field" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="Contains the primary identifier data in one of three supported formats: &#xa;1. &quot;ID&quot;+&quot;Code&quot; (e.g., '1' or '0001'); 2. &quot;ID_Code&quot; (e.g., '1_VF'); 3. &quot;Code_ID&quot; (e.g., 'F7_1')" type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="id_field" type="QString" name="name"/>
+      <Option value="field" type="QString" name="parameter_type"/>
+      <Option value="input_layer" type="QString" name="parent_layer"/>
+    </Option>
+    <Option type="Map" name="identifier_composition">
+      <Option value="false" type="bool" name="allow_multiple"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="Identifier_Composition" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="Structure of identifiers in the input data: Must match the selected ID_Field format of the selected Input_Layer.&#xa;&#xa;&#xa;" type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="identifier_composition" type="QString" name="name"/>
+      <Option type="StringList" name="options">
+        <Option value="'ID'+'Code' ['1'/'0001' + 'VF'/'F7']" type="QString"/>
+        <Option value="'ID_Code' ['1_VF'; '0001_PS']" type="QString"/>
+        <Option value="'Code_ID' ['F7_1'; 'F7_0001']" type="QString"/>
+      </Option>
+      <Option value="enum" type="QString" name="parameter_type"/>
+      <Option value="false" type="bool" name="uses_static_strings"/>
+    </Option>
+    <Option type="Map" name="input_layer">
+      <Option type="List" name="data_types">
+        <Option value="1" type="int"/>
+        <Option value="2" type="int"/>
+      </Option>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="Input_Layer" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="Layer containing features to process:&#xa;Vector layer (Line or Polygon geometry); &#xa;Requirement: Must contain Z-values (elevation data)" type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="input_layer" type="QString" name="name"/>
+      <Option value="vector" type="QString" name="parameter_type"/>
+    </Option>
+    <Option type="Map" name="psyche_output">
+      <Option value="true" type="bool" name="create_by_default"/>
+      <Option value="-1" type="int" name="data_type"/>
+      <Option type="QgsProcessingOutputLayerDefinition" name="default">
+        <Option type="Map">
+          <Option type="Map" name="create_options">
+            <Option value="UTF-8" type="QString" name="fileEncoding"/>
+          </Option>
+          <Option type="Map" name="sink">
+            <Option value="true" type="bool" name="active"/>
+            <Option value="1" type="int" name="type"/>
+            <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="psyche_output" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="" type="QString" name="help"/>
+      <Option type="Map" name="metadata">
+        <Option value="native:refactorfields_4" type="QString" name="_modelChildId"/>
+        <Option value="psyche_output" type="QString" name="_modelChildOutputName"/>
+        <Option value="native" type="QString" name="_modelChildProvider"/>
+      </Option>
+      <Option value="psyche_output" type="QString" name="name"/>
+      <Option value="sink" type="QString" name="parameter_type"/>
+      <Option value="true" type="bool" name="supports_append"/>
+      <Option value="true" type="bool" name="supports_non_file_outputs"/>
+    </Option>
+  </Option>
+  <Option type="StringList" name="parameterOrder">
+    <Option value="input_layer" type="QString"/>
+    <Option value="id_field" type="QString"/>
+    <Option value="identifier_composition" type="QString"/>
+    <Option value="code_field" type="QString"/>
+  </Option>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="code_field">
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="(Optional)&#xa;Only required if you selected 'ID'+'Code' as the identifier composition. Select the attribute field containing the Code values. If using 'ID_Code' or 'Code_ID' formats, this field is not processed." type="QString" name="component_description"/>
+        <Option value="112.12131410142547" type="double" name="component_height"/>
+        <Option value="393.87098403772086" type="double" name="component_pos_x"/>
+        <Option value="289.269573245248" type="double" name="component_pos_y"/>
+        <Option value="430.99721120080517" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="code_field" type="QString" name="component_description"/>
+      <Option value="112.26474977888192" type="double" name="component_height"/>
+      <Option value="102.459121415424" type="double" name="component_pos_x"/>
+      <Option value="289.1131439075601" type="double" name="component_pos_y"/>
+      <Option value="118.40499435004367" type="double" name="component_width"/>
+      <Option value="code_field" type="QString" name="name"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="id_field">
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Select the attribute field that contains the layer information to be processed.&#xa;The algorithm supports three possible &quot;identifier_compositions&quot;:&#xa;&#xa;1. 'ID'+'Code' ['1'/'0001' + 'VF'/'F7']&#xa;2. 'ID_Code' ['1_VF'; '0001_PS']&#xa;3. 'Code_ID' ['F7_1'; 'F7_0001']" type="QString" name="component_description"/>
+        <Option value="103.20382213455846" type="double" name="component_height"/>
+        <Option value="394.1906692615044" type="double" name="component_pos_x"/>
+        <Option value="171.05118974176787" type="double" name="component_pos_y"/>
+        <Option value="433.23838466949775" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="id_field" type="QString" name="component_description"/>
+      <Option value="103.32409878390487" type="double" name="component_height"/>
+      <Option value="102.06798822140269" type="double" name="component_pos_x"/>
+      <Option value="171.1761831269166" type="double" name="component_pos_y"/>
+      <Option value="118.54729644538287" type="double" name="component_width"/>
+      <Option value="id_field" type="QString" name="name"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="identifier_composition">
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Choose how your identifiers are structured in your data:&#xa;&#xa;- 'ID'+'Code': ID and Code are stored in separate attribute fields&#xa;&#xa;- 'ID_Code': Combined format with ID first, then underscore, then Code (e.g., '1_VF')&#xa;&#xa;- 'Code_ID': Combined format with Code first, then underscore, then ID (e.g., 'F7_1')" type="QString" name="component_description"/>
+        <Option value="114.26517400099266" type="double" name="component_height"/>
+        <Option value="424.5177217084163" type="double" name="component_pos_x"/>
+        <Option value="413.67412134680103" type="double" name="component_pos_y"/>
+        <Option value="368.3400378247041" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="identifier_composition" type="QString" name="component_description"/>
+      <Option value="112.60646418254427" type="double" name="component_height"/>
+      <Option value="135.28296049045636" type="double" name="component_pos_x"/>
+      <Option value="412.492752822524" type="double" name="component_pos_y"/>
+      <Option value="184.56749854448384" type="double" name="component_width"/>
+      <Option value="identifier_composition" type="QString" name="name"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="input_layer">
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="166,206,227,255" type="QString" name="color"/>
+        <Option value="Select the line or polygon layer you want to process. This layer must contain features with identifier information in one of the three supported formats. The layer should have Z-values (elevation data) for the algorithm to calculate height attributes." type="QString" name="component_description"/>
+        <Option value="89.75861450589254" type="double" name="component_height"/>
+        <Option value="430.33304013276006" type="double" name="component_pos_x"/>
+        <Option value="62.88891393666921" type="double" name="component_pos_y"/>
+        <Option value="355.1584126618201" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="input_layer" type="QString" name="component_description"/>
+      <Option value="88.6450715600198" type="double" name="component_height"/>
+      <Option value="142.87610670843992" type="double" name="component_pos_x"/>
+      <Option value="62.66714881547281" type="double" name="component_pos_y"/>
+      <Option value="200.43278505696065" type="double" name="component_width"/>
+      <Option value="input_layer" type="QString" name="name"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+    </Option>
+  </Option>
+</Option>
