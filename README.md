@@ -4,6 +4,8 @@ It is a suite containing two algorithms: Synthesis and Psyche
 
 They are designed as adjustable ".model3" algorithm pipelines.
 
+----------------------------------------------------------------------
+
 
 For those seeking a CAD-based (AutoCAD / BricsCAD) solution for spatial recording in archaeological fieldwork, **[AS4CAD](https://github.com/l453rp0mm35/ArchSurv4CAD)** may be worth considering.
 
