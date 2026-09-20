@@ -113,7 +113,7 @@ If `A` is entered as point property for a finds measurement the property is cons
 
 ## In-office
 
-### Type of Input Data**
+### Type of Input Data
 
 ArchSurv4QGIS Synthesis processes delimited Text imported into QGIS as point data with X, Y, and Z values ​​using the "Delimited Text" import function. The file format and the delimiter type of the exported file from the surveying device are insignificant. The exported file should simply be in a format generally readable by QGIS (e.g., .csv, .txt, .asc, etc.) and contain a "point_ID" attribute and a "code" attribute:
 
@@ -125,24 +125,28 @@ ArchSurv4QGIS Synthesis processes delimited Text imported into QGIS as point dat
 ### Import Input Data
 
 First, the desired text file should be imported into QGIS. Follow these steps:
-1 | Click the "Open Data Source Manager" icon. Select the "Delimited Text" option. Use the "[...]" icon to the right of the "File name" field to locate the text file you want to import.
 
-2 | Under File Format, select "Custom delimiters". Here you can set the "Delimiter" used in the text file. If the correct delimiter has been selected, the data should already be displayed as a table under "Sample Data."
+**1** | Click the "Open Data Source Manager" icon. Select the "Delimited Text" option. Use the "[...]" icon to the right of the "File name" field to locate the text file you want to import.
 
-3 | Under "Geometry Definition," select the "Point Coordinates" option. Here, select the x, y, and z coordinates from the table. The following applies:
-X field: 'easting'
-Y field: 'northing'
-Z field: 'elevation'
+**2** | Under File Format, select "Custom delimiters". Here you can set the "Delimiter" used in the text file. If the correct delimiter has been selected, the data should already be displayed as a table under "Sample Data."
+
+**3** | Under "Geometry Definition," select the "Point Coordinates" option. Here, select the x, y, and z coordinates from the table. The following applies:
+`X` field: 'easting'
+`Y` field: 'northing'
+`Z` field: 'elevation'
 Under "Geometry CRS", select the coordinate reference system used to record the point coordinates.
 
-4 | Click "Add". Your text file should now be imported with point coordinates.
+**4** | Click "Add". Your text file should now be imported with point coordinates.
 
 
 ### Start AS4QGIS Synthesis
 
 **1** | Start AS4QGIS Synthesis by double-clicking.
+
 **2** | Select the text file you want to edit.
+
 **3** | Click "Run."
+
 **4** | AS4QGIS Synthesis will generate four virtual layers. Review your datasets and save them, or add them to your overall project using "copy and paste."
 
 Note: All point measurements with IDs that do not begin with four digits, as specified by the ArchSurv code, will be filtered out by the algorithm and excluded from the output data.
@@ -152,6 +156,8 @@ Note: All point measurements with IDs that do not begin with four digits, as spe
 ### Output Shapefiles
 
 Starting from the input file, AS4QGIS Synthesis generates four shapefiles based on the 'shape type' defined in-field on the surveying device. These include the following shape types:
+|Shapefiles|shptypes|
+|---|---|
 **vertices** | All measurement points that do not serve any further function than being vertex points of polylines or polygons.
 **pointdata** | `00`, `01`, `51`, `71`, `81`, `91`
 **polylines** | `00`, `02`, `33`, `52`, `72`, `92`
@@ -160,7 +166,8 @@ Starting from the input file, AS4QGIS Synthesis generates four shapefiles based 
 
 
 ### vertices
-
+|attribute-field|description|
+|---|---|
 `point-ID` | the original ID of the point measurement as entered on the surveying device.
 `x` | the x/easting value of the point measurement.
 `y` | the y/northing value of the point measurement.
@@ -182,7 +189,8 @@ Starting from the input file, AS4QGIS Synthesis generates four shapefiles based 
 
 
 ### pointdata
-
+|attribute-field|description|
+|---|---|
 `ID` | the identifier of the feature.
 `code` | the 'label/code' of the point measurement as entered on the surveying device.
 `shptype_n` | the shape type as a string corresponding to the shape type integer.
@@ -209,7 +217,8 @@ Starting from the input file, AS4QGIS Synthesis generates four shapefiles based 
 
 
 ### polylines
-
+|attribute-field|description|
+|---|---|
 `ID` | the identifier of the feature.
 `code` | the 'label/code' of the point measurement as entered on the surveying device.
 `shptype` | the shape type as an integer.
@@ -226,7 +235,8 @@ Starting from the input file, AS4QGIS Synthesis generates four shapefiles based 
 
 
 ### polygons
-
+|attribute-field|description|
+|---|---|
 `ID` | the identifier of the feature.
 `code` | the 'label/code' of the point measurement as entered on the surveying device.
 `shptype` | the shape type as an integer.
@@ -244,51 +254,45 @@ Starting from the input file, AS4QGIS Synthesis generates four shapefiles based 
 
 ## Temporal Controller
 
-Synthesis and Psyche generate the pseudo-data fields “maxHtemp” and “minHtemp” based on the attribute fields “maxH” and “minH”. In other words, the minimum and maximum elevation values of a feature measurement are translated into a date.
+Synthesis and Psyche generate the pseudo-data fields `maxHtemp` and `minHtemp` based on the attribute fields `maxH` and `minH`. In other words, the minimum and maximum elevation values of a feature measurement are translated into a date.
 
 The following rules apply to this pseudo-date conversion:
 
-Year: The meter value of the elevation + 1000
+**Year**: The meter value of the elevation + 1000
 
-Month: Determined by the centimeter value of the elevation, where:
+**Month**: Determined by the centimeter value of the elevation, where:
+<10 cm = `January`
+; <20 cm = `February`
+; <30 cm = `March`
+; <40 cm = `April`
+; <50 cm = `May`
+; <60 cm = `June`
+; <70 cm = `July`
+; <80 cm = `August`
+; <90 cm = `September`
+; >90 cm = `October`
 
-<10 cm = January
+**Day**: Always set to `1`
 
-<20 cm = February
 
-<30 cm = March
 
-<40 cm = April
-
-<50 cm = May
-
-<60 cm = June
-
-<70 cm = July
-
-<80 cm = August
-
-<90 cm = September
-
->90 cm = October
-
-Day: Always set to '1'
-
-Because “maxHtemp” and “minHtemp” provide a pseudo time range, you can use the "Temporal Controller Panel" and its slider to filter and view features based on their elevation values.
+Because `maxHtemp` and `minHtemp` provide a pseudo time range, you can use the **"Temporal Controller Panel"** and its slider to filter and view features based on their elevation values.
 
 To activate the time component, double-click on one of the datasets in the “Layers” panel. In the now-visible “Layer Properties” window, click on “Temporal” (clock icon) and enable the checkbox “Dynamic temporal control.”
 
+
 If no default settings are visible, enter the following:
 
-Configuration: Separate fields for start and end date/time
+**Configuration**: Separate fields for start and end date/time
 
-Extent: Include start, Include end
+**Extent**: Include start, Include end
 
-Start field: minHtemp
+**Start field**: `minHtemp`
 
-End field: maxHtemp
+**End field**: `maxHtemp`
 
 Click [Apply] and then [OK].
+
 
 In the “Map Navigation Toolbar,” click on “Temporal Controller” (clock icon). In the “Temporal Controller Panel”, click on “Animated temporal navigation.” Now use the slider to set a time value “t.”
 If no changes are visible, you may need to click the blue refresh icon “Set to Full Range.”
@@ -297,6 +301,7 @@ If no changes are visible, you may need to click the blue refresh icon “Set to
 All features will be displayed that have a pseudo time range (i.e. an elevation range) which includes the selected time “t.”
 
 
+----------------------------------------------------------------------
 
 
 ## Qgis2threejs as a Useful Plugin
@@ -310,6 +315,7 @@ Once installed, click the Qgis2threejs icon and, in the opened viewer, select yo
 You will then see an interactive, rotatable 3D view of your measurements.
 
 
+----------------------------------------------------------------------
 
 
 ## CAD-Export
@@ -322,7 +328,8 @@ Check the "Export labels as MTEXT elements" checkbox.
 
 Click "OK." Your DXF has been generated.
 
----
+----------------------------------------------------------------------
+
 
 ## About this project
 
